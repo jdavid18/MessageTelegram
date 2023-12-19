@@ -28,3 +28,34 @@ function submitForm() {
         alert('Error sending message. Please try again.');
     });
 }
+
+function parseCurrentURL() {
+    // Get the current URL
+    const currentURL = window.location.href;
+
+    // Parse the URL to extract parameters
+    const urlParts = currentURL.split('?');
+    if (urlParts.length > 1) {
+        const queryString = urlParts[1];
+        const queryParams = new URLSearchParams(queryString);
+
+        // Extract parameters
+        const name = queryParams.get('Name') || '';
+        const email = queryParams.get('email') || '';
+        const subject = queryParams.get('subject') || '';
+        const message = queryParams.get('message') || '';
+
+        // Create the final output
+        const formData = `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`;
+
+        return formData;
+    } else {
+        return 'No parameters found in the URL.';
+    }
+}
+
+// Call the function
+const result = parseCurrentURL();
+
+// Print the final output
+console.log(result);
