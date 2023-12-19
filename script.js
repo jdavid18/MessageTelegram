@@ -42,8 +42,9 @@ function parseCurrentURL() {
         const email = queryParams.get('email') || '';
         const subject = queryParams.get('subject') || '';
         const message = queryParams.get('message') || '';
-
-        const formData = `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`;
+        const currentDate = new Date();
+        const formattedDate = currentDate.toLocaleString();
+        const formData = `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}\nDate and Time: ${formattedDate}`;
 
         return formData;
     } else {
