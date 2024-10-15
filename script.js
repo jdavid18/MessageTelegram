@@ -2,10 +2,9 @@ function submitForm() {
     const email = document.getElementById('email').value;
     const subject = document.getElementById('subject').value;
     const message = document.getElementById('message').value;
-    const phone = document.getElementById('phone').value;
 
 
-    const formData = `Email: ${email}\nSubject: ${subject}\nMessage: ${message}\nPhone Number: ${phone}`;
+    const formData = `Email: ${email}\nSubject: ${subject}\nMessage: ${message}`;
     console.log(formData);
     telegramMessage(formData);
    
